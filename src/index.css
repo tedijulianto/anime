@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #242424;
+  color: white;
+}
+
+aside a.sidebar.active {
+  color: rgb(250 204 21);
+  border-right: 1px solid rgb(250 204 21);
+}
