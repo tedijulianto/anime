@@ -82,7 +82,7 @@ const Sidebar = ({ children }) => {
     },
     {
       title: "Kanojo Okarishimasu",
-      genre: ["Comdedy", "Romance"],
+      genre: ["Comedy", "Romance"],
       src: "kanojo",
     },
     {
@@ -121,7 +121,7 @@ const Sidebar = ({ children }) => {
             activeclassname="active"
             className="sidebar hover:text-yellow-300 active:text-yellow-400 gap-5 flex items-center p-2"
           >
-            <div className="ml-24">{menu.icon}</div>
+            <div className="2xl:ml-24 ml-14">{menu.icon}</div>
             <div>{menu.name}</div>
           </NavLink>
         ))}
@@ -136,30 +136,30 @@ const Sidebar = ({ children }) => {
             <input
               type="text"
               placeholder="Search..."
-              className="rounded-xl focus:ring-2 focus:ring-yellow-500 focus:outline-none bg-gray-700 appearance-none w-full text-sm leading-6 text-yellow-400 placeholder-yellow-400 py-2 pl-10 ring-1 ring-yellow-200"
+              className="rounded-xl focus:ring-2 focus:ring-yellow-400 focus:outline-none bg-gray-700 appearance-none w-full text-sm leading-6 text-yellow-400 placeholder-yellow-400 py-2 pl-10"
             />
           </form>
           <img
             src="https://source.unsplash.com/random/?girl"
             alt="foto"
-            className="w-12 h-12 rounded-full"
+            className="w-12 h-12 rounded-full hidden 2xl:block"
           />
         </div>
 
         <div className="uppercase font-semibold py-2">popular this week</div>
 
-        <ul className="flex flex-col gap-4 pb-6">
+        <ul className="flex flex-col 2xl:gap-6 gap-4 pb-6">
           {Anime.map((anime, index) => (
             <li key={index} className="flex items-center">
               <NavLink>
                 <img
                   src={`./src/assets/${anime.src}.png`}
                   alt="Anime"
-                  className="w-24 h-32 max-w-fit"
+                  className="2xl:w-24 2xl:h-32 max-w-fit w-16 h-20"
                 />
               </NavLink>
-              <div className="flex flex-col ml-3">
-                <NavLink className="text-md hover:text-yellow-300">
+              <div className="flex flex-col 2xl:ml-3 ml-1 overflow-hidden">
+                <NavLink className="text-sm 2xl:text-base font-semibold hover:text-yellow-300 truncate">
                   {anime.title}
                 </NavLink>
                 <div className="text-xs">{anime.genre.join(", ")}</div>
