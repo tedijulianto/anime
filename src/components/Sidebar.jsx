@@ -11,6 +11,7 @@ import { BsTicketPerforatedFill } from "react-icons/bs";
 import { RiSettings4Fill } from "react-icons/ri";
 import { IoLogOut } from "react-icons/io5";
 import { FaSearch } from "react-icons/fa";
+import { FaBars } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
 import Button from "../components/Button";
@@ -111,15 +112,19 @@ const Sidebar = ({ children }) => {
   };
 
   return (
-    <div className="grid grid-cols-12">
-      <aside className="col-span-2 pt-6 border-r border-zinc-700 h-screen">
-        <h1 className="text-3xl text-center pb-6 font-bold">Anime</h1>
+    <div className="grid xl:grid-cols-12">
+      <aside className="xl:col-span-2 xl:pt-6 xl:border-r xl:border-zinc-700 xl:h-screen">
+        <div className="flex justify-between xl:justify-center items-center p-4 xl:p-0 xl:pb-6">
+          <FaSearch className="xl:hidden" />
+          <h1 className="text-3xl text-center font-bold">Anime</h1>
+          <FaBars className="xl:hidden" />
+        </div>
         {Menus.map((menu, index) => (
           <NavLink
             to={menu.path}
             key={index}
             activeclassname="active"
-            className="sidebar hover:text-yellow-300 active:text-yellow-400 gap-5 flex items-center p-2"
+            className="sidebar hover:text-yellow-300 active:text-yellow-400 gap-5 xl:flex xl:items-center p-2 hidden"
           >
             <div className="2xl:ml-24 ml-14">{menu.icon}</div>
             <div>{menu.name}</div>
@@ -127,10 +132,10 @@ const Sidebar = ({ children }) => {
         ))}
       </aside>
 
-      <main className="col-span-8 p-6 h-screen">{children}</main>
+      <main className="xl:col-span-8 xl:p-6 px-3 xl:h-screen">{children}</main>
 
-      <aside className="col-span-2 p-6 border-l border-zinc-700 h-screen">
-        <div className="flex items-center justify-between pb-6">
+      <aside className="xl:col-span-2 xl:p-6 p-3 xl:border-l xl:border-zinc-700 xl:h-screen">
+        <div className="xl:flex items-center justify-between pb-6 hidden">
           <form className="relative">
             <FaSearch className="absolute top-[30%] left-3 text-yellow-400" />
             <input
@@ -146,9 +151,9 @@ const Sidebar = ({ children }) => {
           />
         </div>
 
-        <div className="uppercase font-semibold py-2">popular this week</div>
+        <div className="uppercase font-semibold xl:py-2 pb-2">popular this week</div>
 
-        <ul className="flex flex-col 2xl:gap-6 gap-4 pb-6">
+        <ul className="flex flex-col 2xl:gap-6 gap-4 pb-3">
           {Anime.map((anime, index) => (
             <li key={index} className="flex items-center">
               <NavLink>

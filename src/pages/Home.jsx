@@ -6,7 +6,7 @@ import { FaPlay } from "react-icons/fa";
 
 export default function Home() {
   const rating = {
-    size: 30,
+    size: 25,
     value: 4.5,
     edit: false,
     isHalf: true,
@@ -42,18 +42,18 @@ export default function Home() {
         <img
           src="./src/assets/gojosatoru.jpg"
           alt="hero"
-          className="opacity-50 2xl:h-[650px] h-[440px] w-full"
+          className="opacity-50 2xl:h-[650px] xl:h-[400px] w-full"
         />
-        <div className="absolute 2xl:top-1/3 top-1/4 2xl:left-14 left-14 w-1/2 2xl:h-1/2">
-          <div className="text-4xl">Jujutsu Kaisen</div>
+        <div className="absolute top-1/2 left-1/2 xl:left-1/3 transform -translate-x-1/2 -translate-y-1/2 w-3/4 xl:w-1/2">
+          <div className="xl:text-4xl text-lg">Jujutsu Kaisen</div>
           <ReactStars {...rating} />
-          <div className="text-md pb-3">
+          <div className="xl:pb-3 pb-2 text-xs xl:text-base">
             {`
             A boy swallows a cursed talisman - the finger of a demon - and
             becomes cursed himself. He enters a shaman's school to be able to
             locate the demon's other body parts and thus exorcise himself.`}
           </div>
-          <Button className="px-3 py-2 bg-yellow-300 hover:bg-yellow-50 text-black font-bold rounded-lg">
+          <Button className="px-3 xl:py-2 py-1 text-xs xl:text-base bg-yellow-300 hover:bg-yellow-50 text-black xl:font-bold font-semibold rounded-lg">
             Watch
           </Button>
         </div>
@@ -68,16 +68,16 @@ export default function Home() {
         </NavLink>
       </div>
 
-      <ul className="grid grid-cols-4 gap-4">
+      <ul className="grid xl:grid-cols-4 gap-4">
         {thumb.map((thumb, index) => (
           <li key={index}>
             <NavLink className="relative">
               <img
                 src={`./src/assets/${thumb.src}.jpe`}
                 alt="thumbnail"
-                className="rounded-xl hover:opacity-50"
+                className="rounded-xl hover:opacity-50 w-full"
               />
-              <div className="2xl:p-4 p-2 bg-white rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 hover:bg-yellow-300">
+              <div className="2xl:p-4 p-3 bg-white rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 hover:bg-yellow-300">
                 <FaPlay className="text-black text-md 2xl:text-2xl" />
               </div>
             </NavLink>
