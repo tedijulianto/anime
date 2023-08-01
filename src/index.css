@@ -11,3 +11,9 @@ aside a.sidebar.active {
   color: rgb(250 204 21);
   border-right: 1px solid rgb(250 204 21);
 }
+
+@media screen and (max-width: 640px) {
+  aside a.sidebar.active {
+    border: none;
+  }
+}
